@@ -1,32 +1,294 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang cá nhân - Nguyễn Minh Tài</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            /* Nền tổng thể: Xanh nước biển nhạt nhẹ nhàng */
+            background-color: #e0f2fe;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        /* Header & Menu - Màu xanh lá chủ đạo */
+        header {
+            background-color: #14532d; /* Xanh lá đậm cực chất */
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #22c55e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #4ade80; /* Xanh lá tươi */
+            margin-bottom: 10px;
+        }
+        nav a {
+            color: #bae6fd; /* Xanh nước biển nhạt phụ trợ */
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #4ade80;
+        }
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #14532d 0%, #15803d 100%);
+            color: #ffffff;
+        }
+        .hero h3 {
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #7dd3fc; /* Xanh nước biển nhạt */
+            margin-bottom: 15px;
+        }
+        .hero h1 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        .hero p {
+            color: #e2e8f0;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 30px;
+            background-color: #22c55e; /* Nút xanh lá nổi bật */
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+        }
+        /* Sections */
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f0f9ff;
+            color: #1e293b;
+        }
+        section:nth-child(even) {
+            background-color: #e0f2fe;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #14532d;
+            margin-bottom: 5px;
+        }
+        .divider {
+            width: 40px;
+            height: 3px;
+            background-color: #22c55e;
+            margin: 0 auto 30px auto;
+        }
+        /* Cards */
+        .card {
+            background: #14532d; /* Nền card xanh lá đậm */
+            color: #ffffff;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 400px;
+            margin: 0 auto 25px auto;
+            box-shadow: 0 8px 25px rgba(20, 83, 45, 0.15);
+            text-align: left;
+            border: 1px solid #166534;
+        }
+        .card h3 {
+            color: #4ade80; /* Tiêu đề card xanh lá sáng */
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .card p, .card li {
+            color: #f1f5f9;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        .circle-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #22c55e;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+        .media-box img, .media-box video {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        /* Links Container */
+        .links-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .link-btn {
+            background-color: #14532d;
+            color: #bae6fd;
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            flex: 1 1 45%;
+            transition: background 0.3s;
+            border: 1px solid #166534;
+        }
+        .link-btn:hover {
+            background-color: #22c55e;
+            color: #ffffff;
+        }
+        /* Footer */
+        footer {
+            background-color: #052e16;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 13px;
+            border-top: 1px solid #14532d;
+        }
+    </style>
 </head>
 <body>
-    <h1>🌟 Chào mừng đến với trang web của mình! 🌟</h1>
-    <hr>
-    <h2>⚡ 1. Thông tin bản thân</h2>
-    <ul>
-        <li>Họ và tên: Nguyễn Minh Tài</li>
-        <li>Lớp / Trường: Lớp 12A3 - Trường THPT Hòn Gai</li>
-        <li>Chiều cao / Cân nặng: 1m70 / 50kg</li>
-        <li>Sở thích: Đạp xe đường dài</li>
-        <li>Khối xét tuyển Đại học: A01 (Toán, Lí, Anh)</li>
-    </ul>
-    <hr>
-    <h2 id="photo">🌈 2. Hình ảnh cá nhân</h2>
-    <img src="https://uploads.onecompiler.io/458dr445x/1793980340328/xe.jpg" alt="Ảnh cá nhân" width="400">
-    <hr>
-    <h2 id="video">🚀 3. Video sở thích (Đạp xe)</h2>
-    <video width="400" controls>
-        <source src="xo.mp4" type="video/mp4">
-    </video>
-    <hr>
-    <h2 id="link">🎯 4. Liên kết hữu ích</h2>
-    <p>
-        👉 <a href="https://www.relive.com/view/vZqNKK59LGv" target="_blank">Khám phá Câu lạc bộ Đạp xe yêu thích tại đây!</a>
-    <hr>
+
+    <!-- Header & Menu -->
+    <header>
+        <div class="logo">NGUYỄN MINH TÀI</div>
+        <nav>
+            <a href="#home">Trang chủ</a>
+            <a href="#about">Giới thiệu</a>
+            <a href="#hobby">Sở thích</a>
+            <a href="#subjects">Môn học</a>
+            <a href="#video">Video</a>
+            <a href="#links">Liên kết</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <h3>WELCOME TO MY WEBSITE</h3>
+        <h1>NGUYỄN MINH TÀI</h1>
+        <p>Chào mừng bạn đến với không gian cá nhân của mình.</p>
+        <p>Đam mê · Trải nghiệm · Chinh phục</p>
+        <a href="#about" class="btn">KHÁM PHÁ NGAY</a>
+    </div>
+
+    <!-- Giới thiệu bản thân -->
+    <section id="about">
+        <h2 class="section-title">Giới thiệu bản thân</h2>
+        <div class="divider"></div>
+        
+        <!-- Ảnh đại diện -->
+        <img src="avatar.jpg" alt="Ảnh đại diện Nguyễn Minh Tài" class="circle-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400'">
+
+        <div class="card">
+            <h3 style="text-align: center; margin-bottom: 10px;">Nguyễn Minh Tài</h3>
+            <p><strong>Ngày sinh:</strong> 25/11/2009</p>
+            <p><strong>Sở thích:</strong> Đạp xe, Nghe nhạc.</p>
+            <p><strong>Môn học yêu thích:</strong> Toán học, Vật lí, Tiếng anh.</p>
+            <p style="margin-top: 15px; text-align: center; color: #bae6fd; font-style: italic;">Mình luôn học hỏi không ngừng để hoàn thiện bản thân, luôn sẵn sàng chinh phục những thử thách mới trên con đường phía trước.</p>
+        </div>
+    </section>
+
+    <!-- Sở thích - Đã chia làm 2 thẻ riêng biệt -->
+    <section id="hobby">
+        <h2 class="section-title">Sở thích của mình</h2>
+        <div class="divider"></div>
+        <p style="color: #475569; margin-bottom: 25px; font-size: 14px;">Những điều tạo nên màu sắc riêng của mình</p>
+
+        <!-- Sở thích 1: Đạp xe -->
+        <div class="card media-box">
+            <img src="xo.jpg" alt="Đạp xe">
+            <h3>Đạp xe đường dài</h3>
+            <p style="text-align: center;">Giúp rèn luyện thể lực, ý chí bền bỉ và cơ hội khám phá những cung đường ven biển Hạ Long tuyệt đẹp.</p>
+        </div>
+
+        <!-- Sở thích 2: Nghe nhạc -->
+        <div class="card media-box">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400" alt="Nghe nhạc">
+            <h3>Âm nhạc</h3>
+            <p style="text-align: center;">Mang lại không gian thư giãn sau giờ học, tiếp thêm năng lượng tích cực và nguồn cảm hứng sống mỗi ngày.</p>
+        </div>
+    </section>
+
+    <!-- Môn học yêu thích -->
+    <section id="subjects">
+        <h2 class="section-title">Môn học yêu thích</h2>
+        <div class="divider"></div>
+
+        <div class="card">
+            <h3>Toán học</h3>
+            <p style="text-align: center;">Rèn luyện tư duy logic và khả năng giải quyết vấn đề hiệu quả.</p>
+        </div>
+
+        <div class="card">
+            <h3>Vật lí</h3>
+            <p style="text-align: center;">Khám phá các quy luật tự nhiên và hiện tượng kỳ thú xung quanh ta.</p>
+        </div>
+
+        <div class="card">
+            <h3>Tiếng Anh</h3>
+            <p style="text-align: center;">Mở rộng tầm nhìn, kết nối tri thức với thế giới toàn cầu.</p>
+        </div>
+    </section>
+
+    <!-- Video của mình -->
+    <section id="video">
+        <h2 class="section-title">Video của mình</h2>
+        <div class="divider"></div>
+
+        <div class="card media-box" style="padding: 15px;">
+            <video controls style="width: 100%; border-radius: 8px;">
+                <source src="vid.mp4" type="video/mp4">
+            </video>
+            <p style="text-align: center; margin-top: 10px; font-size: 14px; color: #bae6fd;">Khoảnh khắc trải nghiệm cá nhân</p>
+        </div>
+    </section>
+
+    <!-- Liên kết -->
+    <section id="links">
+        <h2 class="section-title">Liên kết yêu thích</h2>
+        <div class="divider"></div>
+        <p style="color: #475569; margin-bottom: 25px; font-size: 14px;">Một số trang web và cộng đồng mình quan tâm</p>
+
+        <div class="links-container">
+            <a href="https://www.strava.com" target="_blank" class="link-btn">Strava Cycling</a>
+            <a href="https://github.com" target="_blank" class="link-btn">GitHub Profile</a>
+            <a href="https://vnexpress.net" target="_blank" class="link-btn">Báo VNExpress</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Nguyễn Minh Tài</p>
+        <p style="margin-top: 5px; color: #4ade80;">PERSONAL WEBSITE - 12A3 THPT HÒN GAI</p>
+    </footer>
+
 </body>
 </html>
