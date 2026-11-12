@@ -12,14 +12,14 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            /* Nền tổng thể: Xanh nước biển nhạt nhẹ nhàng */
-            background-color: #e0f2fe;
-            color: #1e293b;
+            /* Nền tổng thể: Xanh nước biển đậm hiện đại, có chiều sâu */
+            background-color: #0b192c;
+            color: #f1f5f9;
             line-height: 1.6;
         }
-        /* Header & Menu - Màu xanh lá chủ đạo */
+        /* Header & Menu - Xanh lá chủ đạo */
         header {
-            background-color: #14532d; /* Xanh lá đậm cực chất */
+            background-color: #14532d; /* Xanh lá đậm */
             padding: 20px 0;
             text-align: center;
             border-bottom: 3px solid #22c55e;
@@ -35,7 +35,7 @@
             margin-bottom: 10px;
         }
         nav a {
-            color: #bae6fd; /* Xanh nước biển nhạt phụ trợ */
+            color: #93c5fd;
             text-decoration: none;
             margin: 0 10px;
             font-size: 14px;
@@ -48,13 +48,13 @@
         .hero {
             text-align: center;
             padding: 60px 20px;
-            background: linear-gradient(135deg, #14532d 0%, #15803d 100%);
+            background: linear-gradient(135deg, #14532d 0%, #064e3b 100%);
             color: #ffffff;
         }
         .hero h3 {
             font-size: 12px;
             letter-spacing: 3px;
-            color: #7dd3fc; /* Xanh nước biển nhạt */
+            color: #38bdf8;
             margin-bottom: 15px;
         }
         .hero h1 {
@@ -64,7 +64,7 @@
             line-height: 1.3;
         }
         .hero p {
-            color: #e2e8f0;
+            color: #cbd5e1;
             font-size: 14px;
             margin-bottom: 8px;
         }
@@ -81,19 +81,19 @@
             letter-spacing: 1px;
             box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
         }
-        /* Sections */
+        /* Sections - Thay nền trắng bằng các tông xanh nước biển đậm nhạt đan xen */
         section {
             padding: 50px 20px;
             text-align: center;
-            background-color: #f0f9ff;
-            color: #1e293b;
+            background-color: #1e3e62; /* Xanh nước biển đậm vừa */
+            color: #f1f5f9;
         }
         section:nth-child(even) {
-            background-color: #e0f2fe;
+            background-color: #0f172a; /* Xanh nước biển cực đậm (Navy) */
         }
         .section-title {
             font-size: 24px;
-            color: #14532d;
+            color: #4ade80; /* Tiêu đề mục màu xanh lá tươi sáng */
             margin-bottom: 5px;
         }
         .divider {
@@ -104,18 +104,18 @@
         }
         /* Cards */
         .card {
-            background: #14532d; /* Nền card xanh lá đậm */
+            background: #14532d; /* Nền card xanh lá đậm sang trọng */
             color: #ffffff;
             border-radius: 15px;
             padding: 25px;
             max-width: 400px;
             margin: 0 auto 25px auto;
-            box-shadow: 0 8px 25px rgba(20, 83, 45, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             text-align: left;
             border: 1px solid #166534;
         }
         .card h3 {
-            color: #4ade80; /* Tiêu đề card xanh lá sáng */
+            color: #4ade80;
             font-size: 20px;
             margin-bottom: 15px;
             text-align: center;
@@ -133,6 +133,7 @@
             border: 4px solid #22c55e;
             margin: 0 auto 20px auto;
             display: block;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
         }
         .media-box img, .media-box video {
             width: 100%;
@@ -150,7 +151,7 @@
         }
         .link-btn {
             background-color: #14532d;
-            color: #bae6fd;
+            color: #93c5fd;
             padding: 12px 25px;
             border-radius: 10px;
             text-decoration: none;
@@ -166,12 +167,12 @@
         }
         /* Footer */
         footer {
-            background-color: #052e16;
+            background-color: #030712;
             color: #94a3b8;
             text-align: center;
             padding: 30px 20px;
             font-size: 13px;
-            border-top: 1px solid #14532d;
+            border-top: 1px solid #1e293b;
         }
     </style>
 </head>
@@ -212,26 +213,26 @@
             <p><strong>Ngày sinh:</strong> 25/11/2009</p>
             <p><strong>Sở thích:</strong> Đạp xe, Nghe nhạc.</p>
             <p><strong>Môn học yêu thích:</strong> Toán học, Vật lí, Tiếng anh.</p>
-            <p style="margin-top: 15px; text-align: center; color: #bae6fd; font-style: italic;">Mình luôn học hỏi không ngừng để hoàn thiện bản thân, luôn sẵn sàng chinh phục những thử thách mới trên con đường phía trước.</p>
+            <p style="margin-top: 15px; text-align: center; color: #93c5fd; font-style: italic;">Mình luôn học hỏi không ngừng để hoàn thiện bản thân, luôn sẵn sàng chinh phục những thử thách mới trên con đường phía trước.</p>
         </div>
     </section>
 
-    <!-- Sở thích - Đã chia làm 2 thẻ riêng biệt -->
+    <!-- Sở thích -->
     <section id="hobby">
         <h2 class="section-title">Sở thích của mình</h2>
         <div class="divider"></div>
-        <p style="color: #475569; margin-bottom: 25px; font-size: 14px;">Những điều tạo nên màu sắc riêng của mình</p>
+        <p style="color: #cbd5e1; margin-bottom: 25px; font-size: 14px;">Những điều tạo nên màu sắc riêng của mình</p>
 
         <!-- Sở thích 1: Đạp xe -->
         <div class="card media-box">
-            <img src="xe.jpg" alt="Đạp xe">
+            <img src="xe.jpg" alt="Đạp xe" onerror="this.src='https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400'">
             <h3>Đạp xe đường dài</h3>
             <p style="text-align: center;">Giúp rèn luyện thể lực, ý chí bền bỉ và cơ hội khám phá những cung đường ven biển Hạ Long tuyệt đẹp.</p>
         </div>
 
         <!-- Sở thích 2: Nghe nhạc -->
         <div class="card media-box">
-            <img src="music.jpg" alt="Nghe nhạc">
+            <img src="music.jpg" alt="Nghe nhạc" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400'">
             <h3>Âm nhạc</h3>
             <p style="text-align: center;">Mang lại không gian thư giãn sau giờ học, tiếp thêm năng lượng tích cực và nguồn cảm hứng sống mỗi ngày.</p>
         </div>
@@ -267,7 +268,7 @@
             <video controls style="width: 100%; border-radius: 8px;">
                 <source src="vid.mp4" type="video/mp4">
             </video>
-            <p style="text-align: center; margin-top: 10px; font-size: 14px; color: #bae6fd;">Khoảnh khắc trải nghiệm cá nhân</p>
+            <p style="text-align: center; margin-top: 10px; font-size: 14px; color: #93c5fd;">Khoảnh khắc trải nghiệm cá nhân</p>
         </div>
     </section>
 
@@ -275,7 +276,7 @@
     <section id="links">
         <h2 class="section-title">Liên kết yêu thích</h2>
         <div class="divider"></div>
-        <p style="color: #475569; margin-bottom: 25px; font-size: 14px;">Một số trang web và cộng đồng mình quan tâm</p>
+        <p style="color: #cbd5e1; margin-bottom: 25px; font-size: 14px;">Một số trang web và cộng đồng mình quan tâm</p>
 
         <div class="links-container">
             <a href="https://www.strava.com" target="_blank" class="link-btn">Strava Cycling</a>
