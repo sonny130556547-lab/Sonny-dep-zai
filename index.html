@@ -10,68 +10,88 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
         body {
-            /* Nền tổng thể: Hiệu ứng chuyển màu mượt mà từ xanh biển đậm sang xanh lá tối */
             background: linear-gradient(180deg, #071929 0%, #0b2522 100%);
             color: #f1f5f9;
             line-height: 1.6;
         }
+
+        /* Khung chứa chung tự động co giãn theo màn hình */
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         /* Header & Menu */
         header {
             background: linear-gradient(90deg, #0b2522 0%, #14532d 100%);
-            padding: 20px 0;
-            text-align: center;
+            padding: 18px 0;
             border-bottom: 3px solid #22c55e;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
         .logo {
             font-size: 24px;
             font-weight: bold;
             letter-spacing: 2px;
             color: #4ade80;
-            margin-bottom: 10px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
         nav a {
             color: #7dd3fc;
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 14px;
+            font-size: 15px;
+            font-weight: 500;
             transition: color 0.3s;
         }
         nav a:hover {
             color: #4ade80;
         }
+
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             background: linear-gradient(135deg, #071929 0%, #14532d 100%);
             color: #ffffff;
         }
         .hero h3 {
-            font-size: 12px;
+            font-size: 13px;
             letter-spacing: 3px;
             color: #38bdf8;
             margin-bottom: 15px;
         }
         .hero h1 {
-            font-size: 28px;
+            font-size: 36px;
             color: #ffffff;
             margin-bottom: 15px;
             line-height: 1.3;
         }
         .hero p {
             color: #cbd5e1;
-            font-size: 14px;
+            font-size: 16px;
             margin-bottom: 8px;
         }
         .btn {
             display: inline-block;
             margin-top: 25px;
-            padding: 12px 30px;
+            padding: 13px 34px;
             background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
             color: #ffffff;
             font-weight: bold;
@@ -80,97 +100,175 @@
             font-size: 14px;
             letter-spacing: 1px;
             box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+            transition: transform 0.2s;
         }
-        /* Sections - Chuyển màu đậm nhạt dần */
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
         section {
-            padding: 50px 20px;
+            padding: 65px 0;
             text-align: center;
             background: linear-gradient(180deg, #0e2a35 0%, #0d2818 100%);
-            color: #f1f5f9;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         .section-title {
-            font-size: 24px;
+            font-size: 28px;
             color: #4ade80;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
         .divider {
-            width: 40px;
+            width: 50px;
             height: 3px;
             background: linear-gradient(90deg, #38bdf8, #22c55e);
-            margin: 0 auto 30px auto;
+            margin: 0 auto 35px auto;
         }
+
+        /* Bố cục lưới tự động chia cột trên máy tính và xếp dọc trên điện thoại */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        /* Khối Giới thiệu bản thân (Avatar + Card) */
+        .about-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .circle-img {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+            flex-shrink: 0;
+        }
+
         /* Cards */
         .card {
             background: linear-gradient(135deg, #102e3b 0%, #134e32 100%);
             color: #ffffff;
-            border-radius: 15px;
-            padding: 25px;
-            max-width: 400px;
-            margin: 0 auto 25px auto;
+            border-radius: 16px;
+            padding: 28px;
+            width: 100%;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
             text-align: left;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
         }
         .card h3 {
             color: #4ade80;
-            font-size: 20px;
+            font-size: 21px;
             margin-bottom: 15px;
             text-align: center;
         }
-        .card p, .card li {
+        .card p {
             color: #f1f5f9;
             font-size: 15px;
             margin-bottom: 10px;
         }
-        .circle-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #38bdf8;
-            margin: 0 auto 20px auto;
-            display: block;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
-        }
         .media-box img, .media-box video {
             width: 100%;
+            height: 230px;
+            object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
         }
+        .video-card {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-card video {
+            width: 100%;
+            max-height: 450px;
+            border-radius: 10px;
+            background: #000;
+        }
+
         /* Links Container */
         .links-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-            max-width: 400px;
+            max-width: 650px;
             margin: 0 auto;
         }
         .link-btn {
             background: linear-gradient(135deg, #0e2a35 0%, #14532d 100%);
             color: #93c5fd;
-            padding: 12px 25px;
-            border-radius: 10px;
+            padding: 14px 28px;
+            border-radius: 12px;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
-            flex: 1 1 45%;
+            min-width: 170px;
             transition: all 0.3s;
             border: 1px solid rgba(56, 189, 248, 0.3);
         }
         .link-btn:hover {
             background: linear-gradient(135deg, #22c55e 0%, #0284c7 100%);
             color: #ffffff;
+            transform: translateY(-2px);
         }
+
         /* Footer */
         footer {
             background-color: #040d16;
             color: #94a3b8;
             text-align: center;
-            padding: 30px 20px;
-            font-size: 13px;
+            padding: 35px 20px;
+            font-size: 14px;
             border-top: 1px solid #0e2a35;
+        }
+
+        /* ========================================================
+           TỐI ƯU RIÊNG CHO MÀN HÌNH MÁY TÍNH / TABLET (Từ 768px trở lên)
+           ======================================================== */
+        @media (min-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .logo {
+                margin-bottom: 0;
+            }
+            .hero h1 {
+                font-size: 44px;
+            }
+            .about-wrapper {
+                flex-direction: row;
+                text-align: left;
+                gap: 40px;
+            }
+            .circle-img {
+                width: 220px;
+                height: 220px;
+            }
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
     </style>
 </head>
@@ -178,108 +276,127 @@
 
     <!-- Header & Menu -->
     <header>
-        <div class="logo">NGUYỄN MINH TÀI</div>
-        <nav>
-            <a href="#home">Trang chủ</a>
-            <a href="#about">Giới thiệu</a>
-            <a href="#hobby">Sở thích</a>
-            <a href="#subjects">Môn học</a>
-            <a href="#video">Video</a>
-            <a href="#links">Liên kết</a>
-        </nav>
+        <div class="container header-content">
+            <div class="logo">NGUYỄN MINH TÀI</div>
+            <nav>
+                <a href="#home">Trang chủ</a>
+                <a href="#about">Giới thiệu</a>
+                <a href="#hobby">Sở thích</a>
+                <a href="#subjects">Môn học</a>
+                <a href="#video">Video</a>
+                <a href="#links">Liên kết</a>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <div class="hero" id="home">
-        <h3>WELCOME TO MY WEBSITE</h3>
-        <h1>NGUYỄN MINH TÀI</h1>
-        <p>Chào mừng bạn đến với không gian cá nhân của mình.</p>
-        <p>Đam mê · Trải nghiệm · Chinh phục</p>
-        <a href="#about" class="btn">KHÁM PHÁ NGAY</a>
+        <div class="container">
+            <h3>WELCOME TO MY WEBSITE</h3>
+            <h1>NGUYỄN MINH TÀI</h1>
+            <p>Chào mừng bạn đến với không gian cá nhân của mình.</p>
+            <p>Đam mê · Trải nghiệm · Chinh phục</p>
+            <a href="#about" class="btn">KHÁM PHÁ NGAY</a>
+        </div>
     </div>
 
     <!-- Giới thiệu bản thân -->
     <section id="about">
-        <h2 class="section-title">Giới thiệu bản thân</h2>
-        <div class="divider"></div>
-        
-        <!-- Ảnh đại diện -->
-        <img src="avatar.jpg" alt="Ảnh đại diện Nguyễn Minh Tài" class="circle-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400'">
+        <div class="container">
+            <h2 class="section-title">Giới thiệu bản thân</h2>
+            <div class="divider"></div>
+            
+            <div class="about-wrapper">
+                <img src="avatar.jpg" alt="Ảnh đại diện Nguyễn Minh Tài" class="circle-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400'">
 
-        <div class="card">
-            <h3 style="text-align: center; margin-bottom: 10px;">Nguyễn Minh Tài</h3>
-            <p><strong>Ngày sinh:</strong> 25/11/2009</p>
-            <p><strong>Sở thích:</strong> Đạp xe, Nghe nhạc.</p>
-            <p><strong>Môn học yêu thích:</strong> Toán học, Vật lí, Tiếng anh.</p>
-            <p style="margin-top: 15px; text-align: center; color: #7dd3fc; font-style: italic;">Mình luôn học hỏi không ngừng để hoàn thiện bản thân, luôn sẵn sàng chinh phục những thử thách mới trên con đường phía trước.</p>
+                <div class="card">
+                    <h3 style="margin-bottom: 12px;">Nguyễn Minh Tài</h3>
+                    <p><strong>Ngày sinh:</strong> 25/11/2009</p>
+                    <p><strong>Sở thích:</strong> Đạp xe, Nghe nhạc.</p>
+                    <p><strong>Môn học yêu thích:</strong> Toán học, Vật lí, Tiếng anh.</p>
+                    <p style="margin-top: 15px; color: #7dd3fc; font-style: italic;">Mình luôn học hỏi không ngừng để hoàn thiện bản thân, luôn sẵn sàng chinh phục những thử thách mới trên con đường phía trước.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Sở thích -->
     <section id="hobby">
-        <h2 class="section-title">Sở thích của mình</h2>
-        <div class="divider"></div>
-        <p style="color: #94a3b8; margin-bottom: 25px; font-size: 14px;">Những điều tạo nên màu sắc riêng của mình</p>
+        <div class="container">
+            <h2 class="section-title">Sở thích của mình</h2>
+            <div class="divider"></div>
+            <p style="color: #94a3b8; margin-bottom: 30px; font-size: 15px;">Những điều tạo nên màu sắc riêng của mình</p>
 
-        <!-- Sở thích 1: Đạp xe -->
-        <div class="card media-box">
-            <img src="xe.jpg" alt="Đạp xe" onerror="this.src='https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400'">
-            <h3>Đạp xe đường dài</h3>
-            <p style="text-align: center;">Giúp rèn luyện thể lực, ý chí bền bỉ và cơ hội khám phá những cung đường ven biển Hạ Long tuyệt đẹp.</p>
-        </div>
+            <div class="grid-2">
+                <!-- Sở thích 1: Đạp xe -->
+                <div class="card media-box">
+                    <img src="xe.jpg" alt="Đạp xe" onerror="this.src='https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400'">
+                    <h3>Đạp xe đường dài</h3>
+                    <p style="text-align: center;">Giúp rèn luyện thể lực, ý chí bền bỉ và cơ hội khám phá những cung đường ven biển Hạ Long tuyệt đẹp.</p>
+                </div>
 
-        <!-- Sở thích 2: Nghe nhạc -->
-        <div class="card media-box">
-            <img src="music.jpg" alt="Nghe nhạc" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400'">
-            <h3>Âm nhạc</h3>
-            <p style="text-align: center;">Mang lại không gian thư giãn sau giờ học, tiếp thêm năng lượng tích cực và nguồn cảm hứng sống mỗi ngày.</p>
+                <!-- Sở thích 2: Nghe nhạc -->
+                <div class="card media-box">
+                    <img src="music.jpg" alt="Nghe nhạc" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400'">
+                    <h3>Âm nhạc</h3>
+                    <p style="text-align: center;">Mang lại không gian thư giãn sau giờ học, tiếp thêm năng lượng tích cực và nguồn cảm hứng sống mỗi ngày.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Môn học yêu thích -->
     <section id="subjects">
-        <h2 class="section-title">Môn học yêu thích</h2>
-        <div class="divider"></div>
+        <div class="container">
+            <h2 class="section-title">Môn học yêu thích</h2>
+            <div class="divider"></div>
 
-        <div class="card">
-            <h3>Toán học</h3>
-            <p style="text-align: center;">Rèn luyện tư duy logic và khả năng giải quyết vấn đề hiệu quả.</p>
-        </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Toán học</h3>
+                    <p style="text-align: center;">Rèn luyện tư duy logic và khả năng giải quyết vấn đề hiệu quả.</p>
+                </div>
 
-        <div class="card">
-            <h3>Vật lí</h3>
-            <p style="text-align: center;">Khám phá các quy luật tự nhiên và hiện tượng kỳ thú xung quanh ta.</p>
-        </div>
+                <div class="card">
+                    <h3>Vật lí</h3>
+                    <p style="text-align: center;">Khám phá các quy luật tự nhiên và hiện tượng kỳ thú xung quanh ta.</p>
+                </div>
 
-        <div class="card">
-            <h3>Tiếng Anh</h3>
-            <p style="text-align: center;">Mở rộng tầm nhìn, kết nối tri thức với thế giới toàn cầu.</p>
+                <div class="card">
+                    <h3>Tiếng Anh</h3>
+                    <p style="text-align: center;">Mở rộng tầm nhìn, kết nối tri thức với thế giới toàn cầu.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Video của mình -->
     <section id="video">
-        <h2 class="section-title">Video của mình</h2>
-        <div class="divider"></div>
+        <div class="container">
+            <h2 class="section-title">Video của mình</h2>
+            <div class="divider"></div>
 
-        <div class="card media-box" style="padding: 15px;">
-            <video controls style="width: 100%; border-radius: 8px;">
-                <source src="vid.mp4" type="video/mp4">
-            </video>
-            <p style="text-align: center; margin-top: 10px; font-size: 14px; color: #7dd3fc;">Khoảnh khắc trải nghiệm cá nhân</p>
+            <div class="card video-card">
+                <video controls>
+                    <source src="vid.mp4" type="video/mp4">
+                </video>
+                <p style="text-align: center; margin-top: 12px; font-size: 15px; color: #7dd3fc;">Khoảnh khắc trải nghiệm cá nhân</p>
+            </div>
         </div>
     </section>
 
     <!-- Liên kết -->
     <section id="links">
-        <h2 class="section-title">Liên kết yêu thích</h2>
-        <div class="divider"></div>
-        <p style="color: #94a3b8; margin-bottom: 25px; font-size: 14px;">Một số trang web và cộng đồng mình quan tâm</p>
+        <div class="container">
+            <h2 class="section-title">Liên kết yêu thích</h2>
+            <div class="divider"></div>
+            <p style="color: #94a3b8; margin-bottom: 30px; font-size: 15px;">Một số trang web và cộng đồng mình quan tâm</p>
 
-        <div class="links-container">
-            <a href="https://www.strava.com" target="_blank" class="link-btn">Strava Cycling</a>
-            <a href="https://www.relive.com/view/vZqNKK59LGv" target="_blank" class="link-btn">70km tour</a>
-            <a href="https://www.facebook.com/share/1CvfhH3VXo/" target="_blank" class="link-btn">Facebook</a>
+            <div class="links-container">
+                <a href="https://www.strava.com" target="_blank" class="link-btn">Strava Cycling</a>
+                <a href="https://www.relive.com/view/vZqNKK59LGv" target="_blank" class="link-btn">70km tour</a>
+                <a href="https://www.facebook.com/share/1CvfhH3VXo/" target="_blank" class="link-btn">Facebook</a>
+            </div>
         </div>
     </section>
 
